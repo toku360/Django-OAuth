@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+   {% csrf_token %}
+   <!-- django.views.generic.editのFormView -->
+   {{ form.as_p }}
+   <!-- LoginRequiredを使用した場合の画面遷移(user.html) -->
+   <input type="hidden" name="next" value="{{ request.GET.next }}">
+   <input type="submit" value="ログイン">
+</form>
+{% endblock %}

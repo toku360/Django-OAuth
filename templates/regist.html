@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+   {% csrf_token %}
+   <!-- RegistForm -->
+   {{ form.as_p }}
+   <input type="submit" value="ユーザ登録">
+</form>
+{% endblock %}
